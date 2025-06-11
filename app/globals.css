@@ -1,0 +1,411 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+    --primary: 222.2 47.4% 11.2%;
+    --primary-foreground: 210 40% 98%;
+    --secondary: 210 40% 96%;
+    --secondary-foreground: 222.2 84% 4.9%;
+    --muted: 210 40% 96%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+    --accent: 210 40% 96%;
+    --accent-foreground: 222.2 84% 4.9%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 222.2 84% 4.9%;
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 212.7 26.8% 83.9%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans JP", "Hiragino Kaku Gothic ProN",
+      "Hiragino Sans", "Yu Gothic Medium", "Meiryo", "MS PGothic", sans-serif;
+    line-height: 1.8;
+    letter-spacing: 0.02em;
+    font-size: 16px;
+    color: #333333;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
+
+/* PitchCraft専用スタイル */
+.pitchcraft-heading {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans JP", "Hiragino Kaku Gothic ProN",
+    "Hiragino Sans", "Yu Gothic Medium", "Meiryo", "MS PGothic", sans-serif;
+  font-weight: 700;
+  line-height: 1.5;
+  letter-spacing: 0.05em;
+  color: #1a1a1a;
+}
+
+.pitchcraft-text {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans JP", "Hiragino Kaku Gothic ProN",
+    "Hiragino Sans", "Yu Gothic Medium", "Meiryo", "MS PGothic", sans-serif;
+  line-height: 1.9;
+  letter-spacing: 0.03em;
+  color: #444444;
+  font-size: 16px;
+}
+
+.pitchcraft-text-large {
+  font-size: 18px;
+  line-height: 1.8;
+}
+
+.pitchcraft-text-small {
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+.pitchcraft-button {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans JP", "Hiragino Kaku Gothic ProN",
+    "Hiragino Sans", "Yu Gothic Medium", "Meiryo", "MS PGothic", sans-serif;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  font-size: 16px;
+}
+
+.pitchcraft-card {
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  border: 1px solid #f0f0f0;
+}
+
+.pitchcraft-section {
+  padding: 80px 0;
+}
+
+.pitchcraft-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.pitchcraft-gradient-blue {
+  background: linear-gradient(135deg, #4a90e2 0%, #357abd 100%);
+}
+
+.pitchcraft-gradient-orange {
+  background: linear-gradient(135deg, #ff8c42 0%, #ff6b1a 100%);
+}
+
+.pitchcraft-text-shadow {
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* テーブルスタイル */
+.pitchcraft-table {
+  border-collapse: separate;
+  border-spacing: 0;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+.pitchcraft-table th {
+  background-color: #f8f9fa;
+  font-weight: 600;
+  padding: 18px;
+  border-bottom: 2px solid #e9ecef;
+  font-size: 15px;
+  letter-spacing: 0.03em;
+  color: #2c3e50;
+}
+
+.pitchcraft-table td {
+  padding: 18px;
+  border-bottom: 1px solid #e9ecef;
+  font-size: 15px;
+  line-height: 1.7;
+  color: #444444;
+}
+
+/* プライシングカード */
+.pricing-card {
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.pricing-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.16);
+}
+
+.pricing-header {
+  padding: 24px 20px;
+  text-align: center;
+  color: white;
+  position: relative;
+}
+
+.pricing-body {
+  padding: 24px 20px;
+  background: white;
+}
+
+/* フォームスタイル */
+.pitchcraft-form-input {
+  border: 2px solid #e9ecef;
+  border-radius: 8px;
+  padding: 14px 18px;
+  font-size: 16px;
+  transition: border-color 0.3s ease;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans JP", "Hiragino Kaku Gothic ProN",
+    "Hiragino Sans", "Yu Gothic Medium", "Meiryo", "MS PGothic", sans-serif;
+  line-height: 1.5;
+}
+
+.pitchcraft-form-input:focus {
+  border-color: #4a90e2;
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(74, 144, 226, 0.1);
+}
+
+/* アニメーション */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in-up {
+  animation: fadeInUp 0.6s ease-out;
+}
+
+/* レスポンシブ調整 */
+@media (max-width: 768px) {
+  .pitchcraft-section {
+    padding: 60px 0;
+  }
+
+  .pitchcraft-container {
+    padding: 0 16px;
+  }
+
+  .pitchcraft-heading {
+    font-size: 26px;
+    line-height: 1.4;
+  }
+
+  .pitchcraft-text {
+    font-size: 15px;
+    line-height: 1.8;
+  }
+
+  .pitchcraft-text-large {
+    font-size: 17px;
+  }
+}
+
+/* 追加の読みやすさ向上 */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 700;
+  color: #1a1a1a;
+  margin-bottom: 0.5em;
+}
+
+p {
+  margin-bottom: 1em;
+  color: #444444;
+}
+
+.text-gray-600 {
+  color: #666666 !important;
+}
+
+.text-gray-700 {
+  color: #555555 !important;
+}
+
+.text-gray-800 {
+  color: #333333 !important;
+}
+
+/* スクロールアニメーション */
+.scroll-animate {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94), transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.scroll-animate.animate-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* 遅延アニメーション */
+.scroll-animate-delay-1 {
+  transition-delay: 0.1s;
+}
+
+.scroll-animate-delay-2 {
+  transition-delay: 0.2s;
+}
+
+.scroll-animate-delay-3 {
+  transition-delay: 0.3s;
+}
+
+.scroll-animate-delay-4 {
+  transition-delay: 0.4s;
+}
+
+/* スライドアニメーション */
+.scroll-slide-left {
+  opacity: 0;
+  transform: translateX(-50px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.scroll-slide-left.animate-in {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.scroll-slide-right {
+  opacity: 0;
+  transform: translateX(50px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.scroll-slide-right.animate-in {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* スケールアニメーション */
+.scroll-scale {
+  opacity: 0;
+  transform: scale(0.9);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.scroll-scale.animate-in {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* カードアニメーション */
+.scroll-card {
+  opacity: 0;
+  transform: translateY(40px) scale(0.95);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.scroll-card.animate-in {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+/* ホバーエフェクト強化 */
+.pitchcraft-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.pitchcraft-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+}
+
+/* ボタンアニメーション強化 */
+.pitchcraft-button {
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.pitchcraft-button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s;
+}
+
+.pitchcraft-button:hover::before {
+  left: 100%;
+}
+
+/* パルスアニメーション */
+@keyframes pulse {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+.scroll-pulse {
+  animation: pulse 2s infinite;
+}
+
+/* スムーズスクロール */
+html {
+  scroll-behavior: smooth;
+}
+
+/* スクロール要素の初期状態 */
+.scroll-animate,
+.scroll-slide-left,
+.scroll-slide-right,
+.scroll-scale,
+.scroll-card {
+  will-change: transform, opacity;
+}
